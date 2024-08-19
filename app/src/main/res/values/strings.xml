@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Laundry system</string>
+    <string-array name="List_Option">
+        <item>Login as User</item>
+        <item>Login as Laundry Owner</item>
+    </string-array>
+</resources>

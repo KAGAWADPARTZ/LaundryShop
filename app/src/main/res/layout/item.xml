@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="6dp"
+    app:cardUseCompatPadding="true"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#85B3D1FF"
+        android:padding="15dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="48dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="75dp"
+            android:background="@android:color/transparent"
+            android:text="🟢 𝙊𝙣𝙡𝙞𝙣𝙚"
+            android:textStyle="bold"
+            android:textColor="#4CAF50"
+            android:textSize="8sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img1"
+            android:layout_width="76dp"
+            android:layout_height="74dp"
+            android:src="@drawable/logo"
+            app:civ_border_color="@color/blue"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/laundryName"
+            android:layout_width="211dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="Labarkada Laundry"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/laundryServices"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/laundryName"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="🕗 𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝚂𝚎𝚛𝚟𝚒𝚌𝚎 9:00𝙰𝙼-10:00𝙿𝙼"
+            android:textColor="#FF0000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/laundryPrice"
+            android:layout_width="277dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/laundryServices"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="Price"
+            android:textColor="#008000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/laundryLocation"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/laundryPrice"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="Location"
+            android:textColor="#000"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

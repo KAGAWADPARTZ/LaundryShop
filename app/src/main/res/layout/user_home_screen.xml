@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--Navigation Bar-->
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/lightblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="287dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="109dp"
+            android:text="🟢 Online"
+            android:textColor="#4CAF50"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="204dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/minilogo" />
+
+        <ImageButton
+            android:id="@+id/btn_profile"
+            android:layout_width="63dp"
+            android:layout_height="61dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="89dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="19dp"
+            android:layout_toRightOf="@+id/logo"
+            android:foreground="@drawable/baseline_account_circle_24"
+            android:backgroundTint="#96D5E9"/>
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rowel"
+            android:textColor="#96D5E9" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="236dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="57dp"
+            android:layout_marginEnd="118dp"
+            android:layout_marginBottom="0dp"
+            android:text="🟢 ʏᴏᴜʀ ᴀʀᴇ ᴏɴʟɪɴᴇ"
+            android:textColor="#4CAF50"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="407dp"
+        android:layout_height="78dp"
+        android:background="#D9D9D9"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"></LinearLayout>
+
+    <!--User Home Screen-->
+    <ImageButton
+        android:id="@+id/btn_laundry"
+        android:layout_width="92dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_local_laundry_service_24"
+        app:tint="#3DC2EC" />
+
+    <!--User Status Screen-->
+    <ImageButton
+        android:id="@+id/btn_status"
+        android:layout_width="92dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_file_copy_24"
+        app:tint="#5F7B83" />
+
+    <!--User History Screen -->
+    <ImageButton
+        android:id="@+id/btn_history"
+        android:layout_width="92dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_status"
+        app:srcCompat="@drawable/baseline_history_24"
+        app:tint="#5F7B83" />
+
+    <!--Search-->
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="363dp"
+        android:layout_height="53dp"
+        android:background="@drawable/round_search_background"
+        android:focusable="false"
+        app:closeIcon="@drawable/baseline_clear_24"
+        app:iconifiedByDefault="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintVertical_bias="0.154"
+        app:queryHint="Search..."
+        app:searchHintIcon="@null"
+        app:searchIcon="@drawable/baseline_search_24" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="375dp"
+        android:layout_height="459dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        app:layout_constraintVertical_bias="0.193" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Header Bar-->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/lightblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="204dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/minilogo" />
+
+        <ImageButton
+            android:id="@+id/btn_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="97dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/logo"
+            android:backgroundTint="#96D5E9"
+            android:foreground="@drawable/baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="353dp"
+            android:background="#96D5E9"
+            android:backgroundTint="#96D5E9"
+            android:text="TextView"
+            android:textColor="#96D5E9" />
+
+    </RelativeLayout>
+
+    <!--Back Button-->
+
+    <!--List Of Laundry Services-->
+    <!--Wash-->
+    <!--Dry-->
+
+    <!--Fold-->
+
+    <!--Fabric-->
+    <!--Detergent-->
+
+
+    <RelativeLayout
+        android:id="@+id/wash"
+        android:layout_width="379dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/cornerbtn_selection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <TextView
+            android:id="@+id/priceWash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="11dp"
+            android:text="Php 120.00"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="76dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="275dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/wash" />
+
+        <TextView
+            android:layout_width="117dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="151dp"
+            android:layout_marginBottom="55dp"
+            android:text="Wash"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dry"
+        android:layout_width="379dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/cornerbtn_selection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wash">
+
+        <TextView
+            android:id="@+id/Dry"
+            android:layout_width="117dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="151dp"
+            android:layout_marginBottom="55dp"
+            android:text="Dry"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="76dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="275dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/dry" />
+
+        <TextView
+            android:id="@+id/priceDry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="11dp"
+            android:text="Php 120.00"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/fold"
+        android:layout_width="379dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/cornerbtn_selection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dry">
+
+        <TextView
+            android:id="@+id/Fold"
+            android:layout_width="117dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="151dp"
+            android:layout_marginBottom="55dp"
+            android:text="Fold"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="76dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="275dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/fold" />
+
+        <TextView
+            android:id="@+id/priceFold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="11dp"
+            android:text="Php 120.00"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/fabric"
+        android:layout_width="379dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/cornerbtn_selection"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fold"
+        app:layout_constraintVertical_bias="0.063">
+
+
+        <TextView
+            android:id="@+id/Fabric"
+            android:layout_width="117dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="151dp"
+            android:layout_marginBottom="55dp"
+            android:text="Fabric"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="76dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="275dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/fabric" />
+
+        <TextView
+            android:id="@+id/priceFabric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="11dp"
+            android:text="Php 120.00"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/detergent"
+        android:layout_width="379dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/cornerbtn_selection"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fabric">
+
+        <TextView
+            android:id="@+id/Detergent"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="111dp"
+            android:layout_marginBottom="57dp"
+            android:text="Detergent"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="76dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="275dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/detergent" />
+
+        <TextView
+            android:id="@+id/priceDetergent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="11dp"
+            android:text="Php 120.00"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+    <Button
+        android:id="@+id/btn_Avail"
+        android:layout_width="168dp"
+        android:layout_height="53dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/lightblue"
+        android:text="𝙎𝙀𝙉𝘿 𝙍𝙀𝙌𝙐𝙀𝙎𝙏"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.981" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="361dp"
+        android:layout_height="128dp"
+        android:background="#85B3D1FF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.058">
+
+        <TextView
+            android:id="@+id/laundryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="74dp"
+            android:text="Laundry Available Services"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="255dp"
+            android:layout_height="19dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="29dp"
+            android:text="𝙱𝚎𝚒𝚗𝚐 𝙲𝚕𝚎𝚊𝚗 𝚒𝚜 𝙴𝚟𝚎𝚛𝚢𝚝𝚑𝚒𝚗𝚐"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/services1"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="97dp"
+            android:layout_marginEnd="89dp"
+            android:layout_marginBottom="52dp"
+            android:text="🫧𝐖𝐚𝐬𝐡  | 🚱 𝐃𝐫𝐲 |👔 𝐅𝐨𝐥𝐝"
+            android:textColor="#FF0000"
+            android:textSize="13sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/services2"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="62dp"
+            android:layout_marginEnd="49dp"
+            android:layout_marginBottom="1dp"
+            android:text="🕓𝐒𝐞𝐫𝐯𝐢𝐜𝐞 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 9:00𝐀𝐌-10:00𝐏𝐌"
+            android:textColor="#FF0000"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="287dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="109dp"
+            android:text="🟢 Online"
+            android:textColor="#4CAF50"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📋 𝐏𝐑𝐈𝐂𝐄 𝐋𝐈𝐒𝐓 📋"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rowel"
+        android:textColor="#96D5E9"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="231dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

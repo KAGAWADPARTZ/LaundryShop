@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--Navigation Bar-->
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🛡️ 𝘼𝘿𝙈𝙄𝙉 𝙐𝙎𝙀𝙍 𝙋𝙊𝙍𝙏𝘼𝙇 🛡️"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#C21807"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="402dp"
+        android:layout_height="452dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="412dp"
+        android:layout_height="90dp"
+        android:background="#97D6EA"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="100dp"
+            app:srcCompat="@drawable/minilogo" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="411dp"
+        android:layout_height="72dp"
+        android:background="#D9D9D9"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/btn_laundry"
+            android:layout_width="53dp"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginRight="30dp"
+            android:layout_toStartOf="@+id/btn_status"
+            android:foreground="@drawable/baseline_local_laundry_service_24"
+            android:foregroundTint="#5F7B83"
+            app:tint="#3DC2EC" />
+
+        <ImageButton
+            android:id="@+id/btn_status"
+            android:layout_width="50dp"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toStartOf="@+id/btn_history"
+            android:foreground="@drawable/baseline_library_add_24"
+            android:foregroundTint="#5F7B83"
+            app:tint="#5F7B83" />
+
+        <ImageButton
+            android:id="@+id/btn_history"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="30dp"
+            android:layout_toStartOf="@+id/btn_profile"
+            android:foreground="@drawable/baseline_history_24"
+            android:foregroundTint="#5F7B83"
+            app:tint="#5F7B83" />
+
+        <ImageButton
+            android:id="@+id/btn_profile"
+            android:layout_width="46dp"
+            android:layout_height="49dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="23dp"
+            android:foreground="@drawable/baseline_account_circle_24"
+            android:foregroundTint="#5F7B83"
+            app:tint="#5F7B83" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_laundry"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="307dp"
+            android:layout_marginBottom="-9dp"
+            android:text="𝙇𝙖𝙪𝙣𝙙𝙧𝙮"
+            android:textColor="#FF0000"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_laundry"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="217dp"
+            android:layout_marginBottom="-14dp"
+            android:text="𝙎𝙩𝙖𝙩𝙪𝙨"
+            android:textColor="#FF0000"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_laundry"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="115dp"
+            android:layout_marginBottom="-10dp"
+            android:text="𝙃𝙞𝙨𝙩𝙤𝙧𝙮"
+            android:textColor="#FF0000"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_laundry"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="33dp"
+            android:layout_marginBottom="-10dp"
+            android:text="𝙇𝙤𝙜 𝙊𝙪𝙩"
+            android:textColor="#FF0000"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <!--Admin Home Screen-->
+    <!--Transaction Made-->
+    <!--Settings-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

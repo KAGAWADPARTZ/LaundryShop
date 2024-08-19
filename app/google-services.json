@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "551510431643",
+    "firebase_url": "https://laundryshop-f28fd-default-rtdb.firebaseio.com",
+    "project_id": "laundryshop-f28fd",
+    "storage_bucket": "laundryshop-f28fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551510431643:android:26efe05cf9b8763fbdb33e",
+        "android_client_info": {
+          "package_name": "com.example.laundrysystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHWbSYXz4BQzS_OMSF6I24dNzk5WyDYVw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

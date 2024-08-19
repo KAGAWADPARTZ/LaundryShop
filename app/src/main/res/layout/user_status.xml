@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="407dp"
+        android:layout_height="78dp"
+        android:background="#D9D9D9"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"></LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_laundry"
+        android:layout_width="92dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_local_laundry_service_24"
+        app:tint="#5F7B83" />
+
+    <ImageButton
+        android:id="@+id/btn_status"
+        android:layout_width="92dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_file_copy_24"
+        app:tint="#3DC2EC" />
+
+    <ImageButton
+        android:id="@+id/btn_history"
+        android:layout_width="92dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_status"
+        app:srcCompat="@drawable/baseline_history_24"
+        app:tint="#5F7B83" />
+
+    <!--Laundry Hub Icon-->
+
+    <TextView
+        android:id="@+id/laundryAddress"
+        android:layout_width="201dp"
+        android:layout_height="48dp"
+        android:text="𝙐𝙥𝙙𝙖𝙩𝙚 𝙎𝙩𝙖𝙩𝙪𝙨"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.175" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/lightblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="204dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/minilogo" />
+
+        <ImageButton
+            android:id="@+id/btn_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="19dp"
+            android:layout_toRightOf="@+id/logo"
+            android:backgroundTint="#96D5E9"
+            android:foreground="@drawable/baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rowel"
+            android:textColor="#96D5E9" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="386dp"
+        android:layout_height="452dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
+
+    <!--Home Screen Profile Image Button-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.laundrysystem">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/logo_icon"
+        android:label="Laundry Hub"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LaundrySystem"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".User.splashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LaundryOwners.laundryowner_upload_images_screen"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".LaundryOwners.laundryowner_status"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".LaundryOwners.laundryowner_profile"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".LaundryOwners.laundryowner_pricelist"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".LaundryOwners.laundryowner_history"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".LaundryOwners.laundryowner_addservices"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".LaundryOwners.laundryowner_home_screen"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".User.signup_user"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".User.user_profile"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".User.user_history"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".User.user_status"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".User.user"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".User.user_home_screen"
+            android:exported="true">
+        </activity>
+        <activity android:name=".User.user_laundry_owner_services_screen"
+            android:exported="true">
+        </activity>
+        <activity android:name=".User.user_avail_screen">
+        </activity>
+        <activity android:name=".User.user_edit_profile"
+            android:exported="true">
+        </activity>
+
+        <activity android:name=".Admin.admin_addingform"
+            android:exported="true"/>
+
+        <activity android:name=".Admin.admin_status"
+            android:exported="true"/>
+        <activity android:name=".Admin.admin_history_screen"
+            android:exported="true"/>
+
+        <activity android:name=".Admin.admin_home_screen"
+            android:exported="true">
+        </activity>
+
+        
+
+        <activity android:name=".Admin.admin_laundry_owner_services_screen"
+            android:exported="true"/>
+        <activity android:name=".User.DetailActivity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".Admin.admin"
+            android:exported="true">
+        </activity>
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+</manifest>
