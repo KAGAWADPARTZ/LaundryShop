@@ -1,25 +1,28 @@
 package com.example.laundrysystem.User;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.laundrysystem.LaundryOwners.LaundryMainModel;
 import com.example.laundrysystem.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
 
-public class UserStatusMainAdapter extends FirebaseRecyclerAdapter<LaundryMainModel, UserStatusMainAdapter.myViewHolder> {
+public class AdapterUser extends FirebaseRecyclerAdapter<LaundryMainModel, AdapterUser.myViewHolder> {
 
     private OnItemClickListener listener;
 
-    public UserStatusMainAdapter(@NonNull FirebaseRecyclerOptions<LaundryMainModel> options) {
+
+    public AdapterUser(@NonNull FirebaseRecyclerOptions<LaundryMainModel> options) {
         super(options);
+
     }
+
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
@@ -31,9 +34,12 @@ public class UserStatusMainAdapter extends FirebaseRecyclerAdapter<LaundryMainMo
 
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull LaundryMainModel model) {
-        holder.userName.setText(model.getShop_name());
-        holder.userAddress.setText(model.getLocation());
-//        holder.contactNumber.setText(model.getContactNumber());
+        holder.shopName.setText(model.getShop_name());
+        holder.userName.setText(model.getName());
+        holder.userAddress.setText(model.getAddress());
+        holder.contactNumber.setText(model.getContactNumber());
+        holder.status.setText(model.getStatus());
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,14 +60,31 @@ public class UserStatusMainAdapter extends FirebaseRecyclerAdapter<LaundryMainMo
 
     class myViewHolder extends RecyclerView.ViewHolder {
 
-        TextView userName, userAddress,contactNumber;
+        TextView userName, userAddress,contactNumber,status,shopName;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            userName = itemView.findViewById(R.id.user__Name);
-            userAddress = itemView.findViewById(R.id.user__Address);
-//            contactNumber = itemView.findViewById(R.id.contactNumber);
+            shopName = itemView.findViewById(R.id.shopName);
+            userName = itemView.findViewById(R.id.userName);
+            userAddress = itemView.findViewById(R.id.userAddress);
+            contactNumber = itemView.findViewById(R.id.contactNumber);
+            status = itemView.findViewById(R.id.textView8);
         }
     }
+
+    public void updateStatus(String key, String newStatus) {
+        DatabaseReference ref = getRef(Integer.parseInt(getSnapshots().getSnapshot(getItemPosition(key)).getKey()));
+        ref.child("status").setValue(newStatus);
+    }
+
+    private int getItemPosition(String key) {
+        for (int i = 0; i < getItemCount(); i++) {
+            if (getRef(i).getKey().equals(key)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
 }

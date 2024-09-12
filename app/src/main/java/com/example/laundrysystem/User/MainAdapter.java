@@ -38,10 +38,10 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel, MainAdapter.
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull MainModel model) {
         holder.bind(model, listener);
 
-        Calendar calendar = Calendar.getInstance(); // kwaon mo anu oras subong
+      /*  Calendar calendar = Calendar.getInstance(); // kwaon mo anu oras subong
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
 
-        if (hour >= 16|| hour <= 9) { //calculate mo kung nag lapaw na sang 10pm sang gabe disable na
+        if (hour >= 20 || hour <= 9) { //calculate mo kung nag lapaw na sang 10pm sang gabe disable na
             holder.itemView.setEnabled(false); //asta 9am
             holder.itemView.setOnClickListener(null);
            holder.itemView.setBackgroundColor(Color.parseColor("#FF0000"));
@@ -61,7 +61,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel, MainAdapter.
                     }
                 }
             });
-        }
+        }*/
     }
 
     @NonNull

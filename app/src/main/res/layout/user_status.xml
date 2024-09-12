@@ -50,7 +50,7 @@
     <!--Laundry Hub Icon-->
 
     <TextView
-        android:id="@+id/laundryAddress"
+        android:id="@+id/txtvUpdateStatus"
         android:layout_width="201dp"
         android:layout_height="48dp"
         android:text="𝙐𝙥𝙙𝙖𝙩𝙚 𝙎𝙩𝙖𝙩𝙪𝙨"
@@ -92,15 +92,15 @@
 
         <TextView
             android:id="@+id/profileName"
-            android:layout_width="wrap_content"
+            android:layout_width="63dp"
             android:layout_height="wrap_content"
             android:text="Rowel"
-            android:textColor="#96D5E9" />
+            android:textColor="@color/black" />
 
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
+        android:id="@+id/rvStatus"
         android:layout_width="386dp"
         android:layout_height="452dp"
         app:layout_constraintBottom_toBottomOf="parent"

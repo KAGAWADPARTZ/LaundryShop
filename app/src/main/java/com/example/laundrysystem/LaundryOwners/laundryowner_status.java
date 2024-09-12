@@ -35,6 +35,9 @@ public class laundryowner_status extends AppCompatActivity {
     DatabaseReference transactionsRef, historyRef;
     LaundryMainModel selectedModel;
     String selectedModelKey;
+    String shopName;
+    DatabaseReference userTransactionRef;
+
 
     boolean isAccepted = false;
 
@@ -57,7 +60,7 @@ public class laundryowner_status extends AppCompatActivity {
         btnCancel = dialog2.findViewById(R.id.btnCancel);
         btnAvail = dialog2.findViewById(R.id.btnAvail);
 
-        String shopName = getIntent().getStringExtra("shop_name");
+        shopName = getIntent().getStringExtra("shop_name");
         transactionsRef = FirebaseDatabase.getInstance().getReference().child("Transaction").child(shopName);
         historyRef = FirebaseDatabase.getInstance().getReference().child("History").child(shopName);
 
@@ -66,6 +69,7 @@ public class laundryowner_status extends AppCompatActivity {
             public void onClick(View view) {
                 if (selectedModel != null && selectedModelKey != null) {
                     selectedModel.setStatus("Processing");
+                    updateStatus(selectedModelKey, "Processing");
                     updateStatus(selectedModelKey, "Processing");
                     dialog.dismiss();
                 }
@@ -78,6 +82,7 @@ public class laundryowner_status extends AppCompatActivity {
                 if (selectedModelKey != null) {
                     transactionsRef.child(selectedModelKey).removeValue().addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
+                            userTransactionRef.child(selectedModelKey).removeValue();
                             Toast.makeText(laundryowner_status.this, "⛔ Transaction Declined", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         } else {
@@ -98,13 +103,13 @@ public class laundryowner_status extends AppCompatActivity {
         btnAvail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if (selectedModel != null && selectedModelKey != null) {
-
                     selectedModel.setStatus("Done");
                     dialog2.dismiss();
                     insertUserHistory(selectedModel, selectedModelKey);
                     insertIntoHistoryAndDeleteFromTransactions(selectedModel, selectedModelKey);
+
+                    deleteFromUserTransaction(selectedModelKey);
                 }
             }
         });
@@ -122,6 +127,8 @@ public class laundryowner_status extends AppCompatActivity {
             public void onItemClick(LaundryMainModel model, String key) {
                 selectedModel = model;
                 selectedModelKey = key;
+
+                userTransactionRef = FirebaseDatabase.getInstance().getReference().child("UserTransaction").child(model.getName()).child(model.getName());
 
                 if ("Processing".equals(model.getStatus())) {
                     dialog2.show();
@@ -230,6 +237,29 @@ public class laundryowner_status extends AppCompatActivity {
                // Log.d("UpdateStatus", "Failed to update status for key " + key + ": " + task.getException());
             }
         });
+
+        userTransactionRef.child("status").setValue(newStatus).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+             //   Log.d("UpdateStatus", "UserTransaction status updated to " + newStatus + " for user " + selectedModel.getName());
+            } else {
+             //   Log.d("UpdateStatus", "Failed to update status for UserTransaction key " + key);
+            }
+        });
     }
+
+    private void deleteFromUserTransaction(String key) {
+        // Reference to the specific user's transaction node
+        DatabaseReference userTransactionRef = FirebaseDatabase.getInstance().getReference().child("UserTransaction").child(selectedModel.getName()).child(key);
+
+        // Remove the model from UserTransaction
+        userTransactionRef.removeValue().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Toast.makeText(laundryowner_status.this, "Transaction Removed from UserTransaction", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(laundryowner_status.this, "Failed to Remove Transaction from UserTransaction", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
 }

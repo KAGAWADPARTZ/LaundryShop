@@ -24,7 +24,7 @@
             app:civ_border_color="@color/blue"/>
 
         <TextView
-            android:id="@+id/userName"
+            android:id="@+id/user__Name"
             android:layout_width="256dp"
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
@@ -41,10 +41,10 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/userAddress"
+            android:id="@+id/user__Address"
             android:layout_width="290dp"
             android:layout_height="19dp"
-            android:layout_below="@+id/userName"
+            android:layout_below="@+id/user__Name"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
@@ -57,10 +57,10 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/contactNumber"
+            android:id="@+id/contact__Number"
             android:layout_width="290dp"
             android:layout_height="19dp"
-            android:layout_below="@+id/userAddress"
+            android:layout_below="@+id/user__Address"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"

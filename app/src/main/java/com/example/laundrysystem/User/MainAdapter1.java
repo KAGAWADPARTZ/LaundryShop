@@ -56,8 +56,8 @@ public class MainAdapter1 extends FirebaseRecyclerAdapter<MainModel1, MainAdapte
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            userName = itemView.findViewById(R.id.userName);
-            userAddress = itemView.findViewById(R.id.userAddress);
+            userName = itemView.findViewById(R.id.user__Name);
+            userAddress = itemView.findViewById(R.id.user__Address);
         }
     }
 }

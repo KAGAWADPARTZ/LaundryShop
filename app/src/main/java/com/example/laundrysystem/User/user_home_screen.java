@@ -210,7 +210,7 @@ public class user_home_screen extends AppCompatActivity {
                 intent.putExtra("shop_name", model.getShop_name());
                 intent.putExtra("location", model.getLocation());
                 intent.putExtra("contact_number", model.getContact_number());
-                intent.putExtra("username", profileName.getText().toString());
+                intent.putExtra("name", profileName.getText().toString());
                 intent.putExtra("address",address);
                 intent.putExtra("contactNumber",contactNumber);
                 startActivity(intent);
@@ -316,14 +316,14 @@ public class user_home_screen extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     DataSnapshot userSnapshot = snapshot.getChildren().iterator().next();
-                    String nameFromDB = userSnapshot.child("name").getValue(String.class);
+                    String name = userSnapshot.child("name").getValue(String.class);
                     String addressFromDB = userSnapshot.child("address").getValue(String.class);
                     String emailFromDB = userSnapshot.child("email").getValue(String.class);
                     String numberFromDB = userSnapshot.child("contactNumber").getValue(String.class);
                     String passwordFromDB = userSnapshot.child("password").getValue(String.class);
                     // Proceed to the user profile screen
                     Intent intent = new Intent(user_home_screen.this, user_status.class);
-                    intent.putExtra("name", nameFromDB);
+                    intent.putExtra("name", name);
                     intent.putExtra("address", addressFromDB);
                     intent.putExtra("email", emailFromDB);
                     intent.putExtra("contactNumber", numberFromDB);

@@ -54,9 +54,6 @@ public class user_laundry_owner_services_screen extends AppCompatActivity {
         priceFabric = findViewById(R.id.priceFabric);
         priceDetergent = findViewById(R.id.priceDetergent);
 
-
-
-
         dialog = new Dialog(user_laundry_owner_services_screen.this);
         dialog.setContentView(R.layout.dialog_insert_data);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -84,9 +81,10 @@ public class user_laundry_owner_services_screen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String laundryShopName = laundryName.getText().toString().trim();
-                String userUsername = profileName.getText().toString().trim();
+                String userUsername = intent.getStringExtra("name");
                 String contactNumber = intent.getStringExtra("contactNumber");
-                ClientInsert(laundryShopName, userUsername, userLocation,contactNumber);
+                ClientInsertUser(laundryShopName, userUsername, userLocation,contactNumber);
+                ClientInsertLaundry(laundryShopName, userUsername, userLocation,contactNumber);
                 next();
             }
         });
@@ -210,7 +208,33 @@ public class user_laundry_owner_services_screen extends AppCompatActivity {
         });
     }
 
-    private void ClientInsert(String laundryShopName, String userUsername, String userLocation, String number) {
+    private void ClientInsertUser(String laundryShopName, String userUsername, String userLocation, String number) { // user transaction
+        // Reference to the transaction node
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("UserTransaction").child(userUsername).child(userUsername);
+
+        String Pending= "Pending";
+
+        // Create a map to hold the user's information
+        Map<String, Object> clientData = new HashMap<>();
+        clientData.put("name", userUsername);
+        clientData.put("address", userLocation);
+        clientData.put("shop_name", laundryShopName);
+        clientData.put("contactNumber",number);
+        clientData.put("status",Pending);
+
+
+        // Add the user to the clients child using the username as the key
+        reference.setValue(clientData).addOnCompleteListener(task -> {
+            if(task.isSuccessful()) {
+                Toast.makeText(this, "✅ YOUR REQUEST WAS SUCCESSFULLY SUBMITTED.", Toast.LENGTH_SHORT).show();
+                // Successfully added client
+            } else {
+                Toast.makeText(this, "✅ YOUR REQUEST WAS FAILED.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void ClientInsertLaundry(String laundryShopName, String userUsername, String userLocation, String number) { // laundry transaction
         // Reference to the transaction node
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Transaction")
                 .child(laundryShopName)
@@ -232,8 +256,7 @@ public class user_laundry_owner_services_screen extends AppCompatActivity {
                 Toast.makeText(this, "✅ YOUR REQUEST WAS SUCCESSFULLY SUBMITTED.", Toast.LENGTH_SHORT).show();
                 // Successfully added client
             } else {
-                // Failed to add client
-
+                Toast.makeText(this, "✅ YOUR REQUEST WAS FAILED.", Toast.LENGTH_SHORT).show();
             }
         });
     }

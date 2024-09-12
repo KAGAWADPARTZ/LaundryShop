@@ -2,7 +2,6 @@ package com.example.laundrysystem.User;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -12,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.laundrysystem.LaundryOwners.LaundryMainModel;
+//import com.example.laundrysystem.LaundryOwners.LaundryMainModel;
 import com.example.laundrysystem.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -22,16 +21,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class    user_history extends AppCompatActivity {
     public ImageButton btn_laundry;
     public ImageButton btn_status;
     public ImageButton btn_history;
     public ImageButton btn_profile;
     RecyclerView recyclerView;
-    com.example.laundrysystem.User.LaundryMainAdapter mainAdapter;
+    AdapterUser mainAdapter;
 
     TextView profileName;
 
@@ -47,60 +43,17 @@ public class    user_history extends AppCompatActivity {
         btn_history = findViewById(R.id.btn_history);
         btn_profile = findViewById(R.id.btn_profile);
 
-        nameFromDB = getIntent().getStringExtra("name");
-
+        Name = getIntent().getStringExtra("name");//get the intent of the user from the other class
 
         recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //FindUserHistory();
-
-
-        //String Result = findUserInHistory(nameFromDB);
-
         FirebaseRecyclerOptions<LaundryMainModel> options =
                 new FirebaseRecyclerOptions.Builder<LaundryMainModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("UserHistory").child(nameFromDB), LaundryMainModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("UserHistory").child(Name), LaundryMainModel.class)
                         .build();
-        mainAdapter = new com.example.laundrysystem.User.LaundryMainAdapter(options);
+        mainAdapter = new AdapterUser(options);
         recyclerView.setAdapter(mainAdapter);
-
-        /*
-        DatabaseReference historyRef = FirebaseDatabase.getInstance().getReference("History");
-
-        historyRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                boolean userHistoryFound = false;
-
-                // Iterate through all laundry shops under the "History" node
-                for (DataSnapshot shopSnapshot : snapshot.getChildren()) {
-                    shop_name = shopSnapshot.getKey(); // Get the shop name
-
-                    // Check if this shop has the user's history (i.e., the user's name as a child)
-                    if (shopSnapshot.hasChild(name)) {
-                        // User's history is found in this shop
-                        queryUserHistory(shop_name, name); // Query the history for this shop and user
-
-                        // Mark as found and exit the loop
-                        userHistoryFound = true;
-                        break;
-                    }
-                }
-
-                if (!userHistoryFound) {
-                    //user noy found
-                    Log.d("UserHistory", "No history found for the user: " + name);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                //database error
-                Log.e("UserHistory", "Database error: " + error.getMessage());
-            }
-        });*/
-
 
         profileName = findViewById(R.id.profileName);
         userData();

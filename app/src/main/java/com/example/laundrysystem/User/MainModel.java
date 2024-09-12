@@ -7,8 +7,6 @@ public class MainModel {
     public MainModel() {
     }
 
-
-
     public MainModel(String shop_name, String location, String contact_number,String services,String name,String address) {
         this.shop_name = shop_name;
         this.location = location;

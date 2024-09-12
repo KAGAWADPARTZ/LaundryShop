@@ -61,9 +61,9 @@ public class LaundryMainAdapter extends FirebaseRecyclerAdapter<LaundryMainModel
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            userName = itemView.findViewById(R.id.userName);
-            userAddress = itemView.findViewById(R.id.userAddress);
-            contactNumber = itemView.findViewById(R.id.contactNumber);
+            userName = itemView.findViewById(R.id.user__Name);
+            userAddress = itemView.findViewById(R.id.user__Address);
+            contactNumber = itemView.findViewById(R.id.contact__Number);
             status = itemView.findViewById(R.id.txtViewOnline);
         }
     }

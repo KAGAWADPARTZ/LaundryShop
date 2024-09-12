@@ -24,17 +24,13 @@ import com.google.firebase.database.ValueEventListener;
 public class user_status extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    com.example.laundrysystem.User.UserStatusMainAdapter mainAdapter;
+    String Name;
+    AdapterUser mainAdapter;
+   /* AdapterUserStatus mainAdapter;*/
 
-
-    LaundryMainModel selectedModel;
-    String selectedModelKey;
-
-
-
-    DatabaseReference transactionsRef;
-
+  /*  com.example.laundrysystem.User.LaundryMainAdapter mainAdapter;*/
     TextView profileName;
+
     public ImageButton btn_laundry;
     public ImageButton btn_status;
     public ImageButton btn_history;
@@ -44,36 +40,25 @@ public class user_status extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_status);
+        Name = getIntent().getStringExtra("name");
 
-
-        transactionsRef = FirebaseDatabase.getInstance().getReference().child("Transaction");
-
-
-        recyclerView = findViewById(R.id.rv);
+        recyclerView = findViewById(R.id.rvStatus);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<LaundryMainModel> options =
                 new FirebaseRecyclerOptions.Builder<LaundryMainModel>()
-                        .setQuery(transactionsRef, LaundryMainModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference("UserTransaction").child(Name), LaundryMainModel.class)
                         .build();
-        mainAdapter = new com.example.laundrysystem.User.UserStatusMainAdapter(options);
-
-        mainAdapter.setOnItemClickListener(new com.example.laundrysystem.User.UserStatusMainAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(LaundryMainModel model, String key) {
-                selectedModel = model;
-                selectedModelKey = key;
-            }
-        });
+        mainAdapter = new AdapterUser(options);
         recyclerView.setAdapter(mainAdapter);
 
+        profileName = findViewById(R.id.profileName);
 
         btn_laundry = findViewById(R.id.btn_laundry);
         btn_status = findViewById(R.id.btn_status);
         btn_history = findViewById(R.id.btn_history);
         btn_profile = findViewById(R.id.btn_profile);
 
-        profileName = findViewById(R.id.profileName);
         userData();
 
         btn_laundry.setOnClickListener(new View.OnClickListener() {
@@ -122,9 +107,9 @@ public class user_status extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     DataSnapshot userSnapshot = snapshot.getChildren().iterator().next();
-                    String passwordFromDb = userSnapshot.child("name").getValue(String.class);
+                    String currentUser = userSnapshot.child("name").getValue(String.class);
 
-                    if (passwordFromDb.equals(userUsername)) {
+                    if (currentUser.equals(userUsername)) {
                         profileName.setError(null);
                         String nameFromDB = userSnapshot.child("name").getValue(String.class);
                         String addressFromDB = userSnapshot.child("address").getValue(String.class);
